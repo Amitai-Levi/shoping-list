@@ -4,17 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list example</title>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
-
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>My shopping list</h1>
@@ -27,30 +17,6 @@
 
     <ul></ul>
 
-    <script>
-      const ul = document.querySelector("ul");
-      const input = document.querySelector("#item");
-      const add = document.querySelector("button");
-      add.setAttribute("onclick", "addClick()");
-      function addClick() {
-        newItem = input.value;
-        input.value = "";
-        const li = document.createElement("li");
-        const spn = document.createElement("span");
-        const rem = document.createElement("button");
-        li.appendChild(spn);
-        li.appendChild(rem);
-        spn.textContent = newItem;
-        rem.textContent = "Delete";
-        ul.appendChild(li);
-        rem.setAttribute("onclick", "remove(this)");
-
-        ul.appendChild(li);
-        input.focus();
-      }
-      function remove(rem) {
-        rem.parentNode.remove();
-      }
-    </script>
+    <script src="./main.js"></script>
   </body>
 </html>
